@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 16</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(#9CECFB, #65C7F7, #0052D4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+            overflow: hidden;
+        }
+
+        .video-container {
+            position: relative;
+            max-width: 900px;
+            width: 100%;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .video-container video {
+            width: 100%;
+            border-radius: 15px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .video-container:hover video {
+            transform: scale(1.01);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-container:hover .overlay {
+            opacity: 1;
+        }
+
+        .play-btn {
+            width: 80px;
+            height: 80px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .play-btn:before {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-left: 20px solid #333;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            margin-left: 5px;
+        }
+
+        h1 {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <h1>Watch This Cute Kitten!</h1>
+        <video id="video" poster="assets/video-thumbnail.jpg" controls>
+            <source src="assets/kitten.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay">
+            <div class="play-btn" onclick="playVideo()"></div>
+        </div>
+    </div>
+
+    <script>
+        function playVideo() {
+            var video = document.getElementById('video');
+            video.play();
+            document.querySelector('.overlay').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
