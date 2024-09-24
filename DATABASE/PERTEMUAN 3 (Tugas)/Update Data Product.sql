@@ -1,0 +1,1 @@
+UPDATE product SET name_product = 'Macbook M1', price = 12000000 WHERE id_product = 1;
