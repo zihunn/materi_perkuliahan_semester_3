@@ -24,7 +24,6 @@ class Hero:
         enemy_hero.hp -= skill_damage
         print(f"{enemy_hero.name} kehilangan {skill_damage} HP.")
 
-# Membuat object dari class Hero
 layla = Hero(name = "Layla", role = "Marksman", hp = 250, ad = 50, skill =  "Destruction Rush")
 tigreal = Hero(name = "Tigreal", role = "Tank", hp = 450, ad = 40, skill = "Sacred Hammer")
 
